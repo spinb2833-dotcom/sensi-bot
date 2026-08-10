@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: sensi-server
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
