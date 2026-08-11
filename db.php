@@ -1,13 +1,12 @@
 <?php
 // ============================================
-// SENSI MODS - RAILWAY POSTGRESQL
+// SENSI MODS - COMPLETE DATABASE CONNECTION
 // ============================================
 
-// ── GET DATABASE URL FROM RAILWAY ENVIRONMENT ──
 $connectionString = getenv('DATABASE_URL');
 
 if (!$connectionString) {
-    die("DATABASE_URL environment variable not set on Railway!");
+    die("DATABASE_URL environment variable not set!");
 }
 
 function db() {
@@ -26,7 +25,6 @@ function initDatabase() {
     try {
         $pdo = db();
         
-        // ── LICENSES ──
         $pdo->exec("
             CREATE TABLE IF NOT EXISTS licenses (
                 id SERIAL PRIMARY KEY,
@@ -41,7 +39,6 @@ function initDatabase() {
             )
         ");
         
-        // ── RESELLERS ──
         $pdo->exec("
             CREATE TABLE IF NOT EXISTS resellers (
                 id SERIAL PRIMARY KEY,
@@ -52,7 +49,6 @@ function initDatabase() {
             )
         ");
         
-        // ── REBRANDERS ──
         $pdo->exec("
             CREATE TABLE IF NOT EXISTS rebranders (
                 id SERIAL PRIMARY KEY,
@@ -63,7 +59,6 @@ function initDatabase() {
             )
         ");
         
-        // ── INTERACTIONS ──
         $pdo->exec("
             CREATE TABLE IF NOT EXISTS interactions (
                 id SERIAL PRIMARY KEY,
@@ -75,7 +70,6 @@ function initDatabase() {
             )
         ");
         
-        // ── COUNTRIES ──
         $pdo->exec("
             CREATE TABLE IF NOT EXISTS countries (
                 id SERIAL PRIMARY KEY,
