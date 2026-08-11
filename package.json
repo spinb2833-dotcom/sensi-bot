@@ -1,8 +1,7 @@
 {
   "name": "sensi-bot",
   "version": "1.0.0",
-  "description": "SENSI MODS Telegram Bot",
   "scripts": {
-    "start": "php -S 0.0.0.0:8080"
+    "start": "php -S 0.0.0.0:10000"
   }
 }
